@@ -15,7 +15,7 @@ const App = () => {
         const data = await response.json();
         setPosts(data); // Update state with posts
       } catch (err) {
-        setError(err.message); // Update state with error message
+        setError("Data fetching failed"); // Update state with error message
       }
     };
 
@@ -23,17 +23,16 @@ const App = () => {
   }, []);
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div style={{ padding: "20px", textAlign: "center" }}>
       <h1>Blog Posts</h1>
-      {/* Display error if it exists */}
+      {/* Display error message */}
       {error ? (
-        <div style={{ color: "red" }}>
-          <h2>Error Loading Posts</h2>
-          <p>{error}</p>
+        <div style={{ color: "black", fontSize: "24px", fontWeight: "bold", fontFamily: "serif" }}>
+          {error}
         </div>
       ) : (
         // Display posts if fetched successfully
-        <ul>
+        <ul style={{ listStyleType: "none", padding: 0 }}>
           {posts.map((post) => (
             <li key={post.id} style={{ marginBottom: "15px" }}>
               <h3>{post.title}</h3>
