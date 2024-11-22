@@ -33,7 +33,10 @@ Your task is to build a React application that makes HTTP GET requests to the JS
 - Effective state management and error handling.
 - Code readability and structure.
 - Handling of edge cases and potential errors.
+##### How to run project
 
+first: cd jsonplaceholder-blog
+then: npm start
 
 
 
